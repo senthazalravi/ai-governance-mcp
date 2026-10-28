@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "description": "AI governance MCP: EU AI Act, GDPR and ISO/IEC 42001 checks, evidence and audit reports.",
+  "name": "io.github.senthazalravi/ai-governance-mcp",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://ai-governance-mcp.ravi-antone.workers.dev/mcp"
+    }
+  ],
+  "repository": {
+    "source": "github",
+    "url": "https://github.com/senthazalravi/ai-governance-mcp"
+  },
+  "title": "Universal AI Governance MCP",
+  "version": "1.1.0",
+  "websiteUrl": "https://ai-governance-mcp.ravi-antone.workers.dev"
+}
