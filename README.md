@@ -2,6 +2,8 @@
 
 One MCP server that assesses AI projects against AI laws, ISO standards, risk frameworks, and technical compliance checks, behind a single interface. It returns a YES / NO / NEEDS REVIEW verdict in milliseconds, with traceable evidence, and a full internal audit report on request.
 
+The whole idea is automatic: you do not ask each time. Connect this MCP to your AI agent once, register the codebase once with `register_watch`, and the MCP automatically rechecks it weekly or monthly and sends a periodic compliance report. Reports are stored at `/api/watch/<id>`, delivered by your connected agent, and emailed to a registered email when the `RESEND_API_KEY` worker secret is set.
+
 **Live MCP endpoint:** https://ai-governance-mcp.ravi-antone.workers.dev/mcp
 **Transport:** MCP Streamable HTTP (JSON-RPC over POST /mcp)
 **Landing page:** https://ai-governance-mcp.ravi-antone.workers.dev

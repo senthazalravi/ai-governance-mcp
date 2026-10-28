@@ -258,7 +258,7 @@
     },
     {
       "name": "register_watch",
-      "purpose": "Register a Fire-and-Forget watch: re-assess a stored project snapshot weekly or monthly and keep the latest report",
+      "purpose": "Connect once, then automatic: register a project once and the MCP automatically re-assesses it weekly or monthly and sends a periodic compliance report. No further asking is needed.",
       "inputSchema": {
         "type": "object",
         "properties": {
