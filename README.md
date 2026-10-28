@@ -9,6 +9,18 @@ The whole idea is automatic: you do not ask each time. Connect this MCP to your 
 **Landing page:** https://ai-governance-mcp.ravi-antone.workers.dev
 **Version:** 1.1.0-audit
 
+## Pricing: no free tier
+
+$49 USD one-time, or custom pricing by message to ravi.antone@gmail.com. The public demo verdict on the landing page is a demo only, not product access.
+
+## Self-service sign up and token
+
+1. Create an account on the landing page: `POST /api/auth/signup` with email and a password of at least 8 characters. Passwords are stored as PBKDF2 hashes with a salt, never in plain text.
+2. Log in: `POST /api/auth/login` returns a session token (30 days, stored only as a hash).
+3. Pay $49 one-time, or arrange custom pricing. Token fetching is gated: an unpaid account gets 402 Payment Required.
+4. Fetch your token: `POST /api/auth/token` with your session token returns a `ugm_` Bearer token, shown only once, stored only as a SHA-256 hash. Use it as `Authorization: Bearer <token>` for `/mcp`.
+5. List and revoke tokens with `GET /api/auth/tokens` and `POST /api/auth/token/revoke`.
+
 ## Install
 
 Authentication is required for real codebase assessment: every `/mcp` call must send `Authorization: Bearer YOUR_TOKEN`. Without it the server returns 401. The public landing, catalogue, samples, and demo verdict stay open, but `/mcp` and all code-assessment endpoints (`/api/assess`, `/api/audit-report`, `/api/watch`, audit and watch reports) are authenticated. Do not submit private repositories, production personal data, or real secrets over an unauthenticated connection, and keep your bearer token private.
