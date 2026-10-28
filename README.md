@@ -11,12 +11,12 @@ The whole idea is automatic: you do not ask each time. Connect this MCP to your 
 
 ## Install
 
-No API key is needed in this preview. Do not submit private repositories, production personal data, or real secrets.
+Authentication is required for real codebase assessment: every `/mcp` call must send `Authorization: Bearer YOUR_TOKEN`. Without it the server returns 401. The public landing, catalogue, samples, and demo verdict stay open, but `/mcp` and all code-assessment endpoints (`/api/assess`, `/api/audit-report`, `/api/watch`, audit and watch reports) are authenticated. Do not submit private repositories, production personal data, or real secrets over an unauthenticated connection, and keep your bearer token private.
 
 ### Claude Code
 
 ```
-claude mcp add --transport http ai-governance https://ai-governance-mcp.ravi-antone.workers.dev/mcp
+claude mcp add --transport http --header "Authorization: Bearer YOUR_TOKEN" ai-governance https://ai-governance-mcp.ravi-antone.workers.dev/mcp
 ```
 
 Then inside Claude Code run `/mcp` to confirm it connected, or run `claude mcp list`.
@@ -29,7 +29,10 @@ Edit `.cursor/mcp.json` in your project, or `~/.cursor/mcp.json` for every proje
 {
   "mcpServers": {
     "ai-governance": {
-      "url": "https://ai-governance-mcp.ravi-antone.workers.dev/mcp"
+      "url": "https://ai-governance-mcp.ravi-antone.workers.dev/mcp",
+      "headers": {
+        "Authorization": "Bearer YOUR_TOKEN"
+      }
     }
   }
 }
@@ -44,7 +47,10 @@ Create `.vscode/mcp.json` in your workspace, or use Command Palette, MCP: Add Se
   "servers": {
     "ai-governance": {
       "type": "http",
-      "url": "https://ai-governance-mcp.ravi-antone.workers.dev/mcp"
+      "url": "https://ai-governance-mcp.ravi-antone.workers.dev/mcp",
+      "headers": {
+        "Authorization": "Bearer YOUR_TOKEN"
+      }
     }
   },
   "inputs": []
@@ -59,7 +65,10 @@ Edit `~/.codeium/windsurf/mcp_config.json`. Windsurf uses `serverUrl`, not `url`
 {
   "mcpServers": {
     "ai-governance": {
-      "serverUrl": "https://ai-governance-mcp.ravi-antone.workers.dev/mcp"
+      "serverUrl": "https://ai-governance-mcp.ravi-antone.workers.dev/mcp",
+      "headers": {
+        "Authorization": "Bearer YOUR_TOKEN"
+      }
     }
   }
 }
