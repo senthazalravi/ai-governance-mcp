@@ -78,11 +78,15 @@ Run `npx @modelcontextprotocol/inspector`, choose Transport Streamable HTTP, pas
 3. Generate an ISO/IEC 42001 audit report for this project, with nonconformities and corrective actions.
 4. Fix a failed check, then review the changes and tell me what is fixed.
 
-## Tools (14)
+## Tools (22)
 
-discover_frameworks, assess_ai_system, review_codebase, map_requirements, assess_ai_risks, check_controls, generate_tests, generate_evidence, review_changes, explain_requirement, register_watch, get_watch_report, generate_audit_report, get_audit_report.
+discover_frameworks, assess_ai_system, review_codebase, map_requirements, assess_ai_risks, check_controls, generate_tests, generate_evidence, review_changes, explain_requirement, register_watch, get_watch_report, generate_audit_report, get_audit_report, get_about, health_check, assess_prompt, review_agent_action, check_agent_config, generate_agent_policy, get_example_prompts, plan_next_steps.
 
 Full tool schemas are in `examples/tools.json`, live from `/api/tools`.
+
+## Agent-first tools
+
+This MCP is mainly used by an AI agent. An agent should start with `get_about` (product, owner, contact, install, limitations) and `health_check` (self-test), then use `assess_prompt` before executing a prompt, `review_agent_action` before a destructive, financial, or external action, and `check_agent_config` for risky permissions. `generate_agent_policy` produces a governance system-prompt snippet, `get_example_prompts` gives the full tool workflow, and `plan_next_steps` turns an assessment into an ordered task list: fix failed checks first, then human review, re-check, audit, and watch.
 
 ## Framework maturity
 
@@ -110,4 +114,6 @@ Reproducible samples are in `examples/sample-audit.json`. Risky sample: 0 Verifi
 
 ## Contact
 
-ravi.antone@gmail.com
+ravi.antone@gmail.com, +46733115830
+
+The same contact details are returned by the `get_about` tool and by `GET /api/about`.

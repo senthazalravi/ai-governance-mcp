@@ -362,6 +362,151 @@
           "audit_id"
         ]
       }
+    },
+    {
+      "name": "get_about",
+      "purpose": "About this MCP, its owner, contact details, install instructions, and limitations. For AI agents to introduce themselves and know who to contact.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "health_check",
+      "purpose": "Agent self-test: server health, tool and check counts, and a sample verdict with latency",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "assess_prompt",
+      "purpose": "Assess an AI agent prompt or system instruction for governance risks: secrets, personal data, instruction overrides, and exfiltration",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "type": "string"
+          },
+          "context": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "prompt"
+        ]
+      }
+    },
+    {
+      "name": "review_agent_action",
+      "purpose": "Assess an action an AI agent is about to take: risk level, verdict, and whether human approval is required before acting",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string"
+          },
+          "tool": {
+            "type": "string"
+          },
+          "target": {
+            "type": "string"
+          },
+          "data_type": {
+            "type": "string"
+          },
+          "context": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "action"
+        ]
+      }
+    },
+    {
+      "name": "check_agent_config",
+      "purpose": "Review an AI agent configuration for risky permissions: shell, file writes, network, secrets, logging, and approval for destructive actions",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "config_text": {
+            "type": "string"
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "generate_agent_policy",
+      "purpose": "Generate a governance system-prompt snippet for an AI agent, tailored to selected frameworks",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_name": {
+            "type": "string"
+          },
+          "framework_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "get_example_prompts",
+      "purpose": "Example prompts and tool sequences for AI agents using this MCP, from first discovery to audit",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "plan_next_steps",
+      "purpose": "Turn an assessment into an ordered agent task list: fix failed checks first, then observations, then watch and audit",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_name": {
+            "type": "string"
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "context": {
+            "type": "string"
+          }
+        }
+      }
     }
   ],
   "version": "1.1.0-audit"
