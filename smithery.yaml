@@ -1,0 +1,23 @@
+name: ai-governance-mcp
+displayName: Universal AI Governance MCP
+description: One MCP server that assesses AI projects against EU AI Act, GDPR, ISO/IEC 42001, ISO/IEC 23894, NIST AI RMF, and ISO/IEC 27001 checks, with traceable evidence, audit reporting, and a weekly/monthly watch.
+homepage: https://ai-governance-mcp.ravi-antone.workers.dev
+server:
+  type: http
+  url: https://ai-governance-mcp.ravi-antone.workers.dev/mcp
+tools:
+  - discover_frameworks
+  - assess_ai_system
+  - review_codebase
+  - map_requirements
+  - assess_ai_risks
+  - check_controls
+  - generate_tests
+  - generate_evidence
+  - review_changes
+  - explain_requirement
+  - register_watch
+  - get_watch_report
+  - generate_audit_report
+  - get_audit_report
+limitations: Developer preview, unauthenticated, do not submit private repositories or secrets. Automated checks are not legal compliance or ISO certification. ISO material is referenced by structure and clause identifier only, not reproduced. ISO/IEC 42001 is implemented; all other frameworks are work in progress but exposed.

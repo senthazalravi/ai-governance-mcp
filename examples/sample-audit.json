@@ -1,0 +1,129 @@
+{
+  "risky": {
+    "project": "Sample: AI applicant screening (intentionally risky)",
+    "opinion": "Not ready for certification: major nonconformities must be closed and verified. This is an internal audit opinion, not a certification decision.",
+    "summary": {
+      "Verified": 0,
+      "Failed": 20,
+      "Needs review": 23,
+      "N/A": 7
+    },
+    "major_nonconformities": 19,
+    "minor_nonconformities": 1,
+    "observations_count": 23,
+    "by_clause_summary": {
+      "Clause 4": {
+        "Verified": 0,
+        "Failed": 2,
+        "Needs review": 2,
+        "N/A": 0
+      },
+      "Clause 5": {
+        "Verified": 0,
+        "Failed": 1,
+        "Needs review": 3,
+        "N/A": 0
+      },
+      "Clause 6": {
+        "Verified": 0,
+        "Failed": 2,
+        "Needs review": 1,
+        "N/A": 0
+      },
+      "Clause 7": {
+        "Verified": 0,
+        "Failed": 1,
+        "Needs review": 4,
+        "N/A": 0
+      },
+      "Clause 8": {
+        "Verified": 0,
+        "Failed": 4,
+        "Needs review": 0,
+        "N/A": 0
+      },
+      "Clause 9": {
+        "Verified": 0,
+        "Failed": 1,
+        "Needs review": 2,
+        "N/A": 0
+      },
+      "Clause 10": {
+        "Verified": 0,
+        "Failed": 1,
+        "Needs review": 1,
+        "N/A": 0
+      },
+      "Annex A": {
+        "Verified": 0,
+        "Failed": 8,
+        "Needs review": 10,
+        "N/A": 7
+      }
+    }
+  },
+  "aims": {
+    "project": "Sample: AIMS documentation example (mostly conforming)",
+    "opinion": "Conforming on supplied evidence. This is an internal audit opinion, not a certification decision.",
+    "summary": {
+      "Verified": 50,
+      "Failed": 0,
+      "Needs review": 0,
+      "N/A": 0
+    },
+    "major_nonconformities": 0,
+    "minor_nonconformities": 0,
+    "observations_count": 0,
+    "by_clause_summary": {
+      "Clause 4": {
+        "Verified": 4,
+        "Failed": 0,
+        "Needs review": 0,
+        "N/A": 0
+      },
+      "Clause 5": {
+        "Verified": 4,
+        "Failed": 0,
+        "Needs review": 0,
+        "N/A": 0
+      },
+      "Clause 6": {
+        "Verified": 3,
+        "Failed": 0,
+        "Needs review": 0,
+        "N/A": 0
+      },
+      "Clause 7": {
+        "Verified": 5,
+        "Failed": 0,
+        "Needs review": 0,
+        "N/A": 0
+      },
+      "Clause 8": {
+        "Verified": 4,
+        "Failed": 0,
+        "Needs review": 0,
+        "N/A": 0
+      },
+      "Clause 9": {
+        "Verified": 3,
+        "Failed": 0,
+        "Needs review": 0,
+        "N/A": 0
+      },
+      "Clause 10": {
+        "Verified": 2,
+        "Failed": 0,
+        "Needs review": 0,
+        "N/A": 0
+      },
+      "Annex A": {
+        "Verified": 25,
+        "Failed": 0,
+        "Needs review": 0,
+        "N/A": 0
+      }
+    }
+  },
+  "note": "Reproducible audit samples. Run generate_audit_report with these exact files to get the same result. ISO text is not reproduced."
+}

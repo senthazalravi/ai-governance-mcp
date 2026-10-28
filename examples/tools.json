@@ -1,0 +1,368 @@
+{
+  "tools": [
+    {
+      "name": "discover_frameworks",
+      "purpose": "Identify relevant regulations and standards, with maturity and version",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "framework_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "assess_ai_system",
+      "purpose": "Establish intended use, context, risk tier, and applicable checks",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "intended_use": {
+            "type": "string"
+          },
+          "users": {
+            "type": "string"
+          },
+          "data_types": {
+            "type": "string"
+          },
+          "deployment": {
+            "type": "string"
+          },
+          "high_risk_context": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "intended_use"
+        ]
+      }
+    },
+    {
+      "name": "review_codebase",
+      "purpose": "Inspect supplied code or project files against the governance checks and return findings with evidence",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_name": {
+            "type": "string"
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "context": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "map_requirements",
+      "purpose": "Map applicable requirements across selected frameworks",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "framework_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "check_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "assess_ai_risks",
+      "purpose": "Generate a structured risk register linked to checks",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "intended_use": {
+            "type": "string"
+          },
+          "users": {
+            "type": "string"
+          },
+          "data_types": {
+            "type": "string"
+          },
+          "deployment": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "check_controls",
+      "purpose": "Evaluate applicable, testable security and governance controls",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_name": {
+            "type": "string"
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "generate_tests",
+      "purpose": "Produce verification tests for selected or failed controls",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "check_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "project_name": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "generate_evidence",
+      "purpose": "Assemble an evidence report from an assessment, or assess supplied files and report on them",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_name": {
+            "type": "string"
+          },
+          "assessment": {
+            "type": "object"
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "review_changes",
+      "purpose": "Reassess code changes against mapped requirements and show what was fixed or newly failed",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_name": {
+            "type": "string"
+          },
+          "before_files": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "after_files": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "before_text": {
+            "type": "string"
+          },
+          "after_text": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "explain_requirement",
+      "purpose": "Explain a requirement with a source citation and applicability context, or state when a source is unavailable",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "check_id": {
+            "type": "string"
+          },
+          "requirement": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "register_watch",
+      "purpose": "Register a Fire-and-Forget watch: re-assess a stored project snapshot weekly or monthly and keep the latest report",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_name": {
+            "type": "string"
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "schedule": {
+            "type": "string",
+            "enum": [
+              "weekly",
+              "monthly"
+            ]
+          },
+          "email": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "project_name"
+        ]
+      }
+    },
+    {
+      "name": "get_watch_report",
+      "purpose": "Return the latest comprehensive report for a registered watch",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "watch_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "watch_id"
+        ]
+      }
+    },
+    {
+      "name": "generate_audit_report",
+      "purpose": "Generate a full ISO/IEC 42001 internal audit report: opinion, nonconformities, observations, corrective actions, and evidence trace",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "project_name": {
+            "type": "string"
+          },
+          "scope": {
+            "type": "string"
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "content": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "text": {
+            "type": "string"
+          },
+          "context": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "name": "get_audit_report",
+      "purpose": "Return a stored audit report by its audit ID",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "audit_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "audit_id"
+        ]
+      }
+    }
+  ],
+  "version": "1.1.0-audit"
+}

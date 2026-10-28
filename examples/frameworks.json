@@ -1,0 +1,124 @@
+{
+  "frameworks": [
+    {
+      "id": "eu-ai-act",
+      "name": "EU AI Act",
+      "scope": "Regulation",
+      "maturity": "work-in-progress",
+      "version": "Regulation (EU) 2024/1689",
+      "note": "Work in progress. Exposed in tools and catalogue, partially mapped by the AI-GOV checks. Not yet a full module.",
+      "tested_checks": [
+        "AI-GOV-001",
+        "AI-GOV-002",
+        "AI-GOV-003"
+      ],
+      "tested_check_count": 3
+    },
+    {
+      "id": "gdpr",
+      "name": "GDPR",
+      "scope": "Regulation",
+      "maturity": "work-in-progress",
+      "version": "Regulation (EU) 2016/679",
+      "note": "Work in progress. Exposed, partially mapped by the AI-GOV checks.",
+      "tested_checks": [
+        "AI-GOV-006",
+        "AI-GOV-007"
+      ],
+      "tested_check_count": 2
+    },
+    {
+      "id": "iso-42001",
+      "name": "ISO/IEC 42001",
+      "scope": "AI management system",
+      "maturity": "implemented",
+      "version": "BS ISO/IEC 42001:2023, structure only",
+      "note": "Implemented. Full check set in this product: 50 independently authored checks covering clauses 4 to 10 and Annex A controls. Full ISO text is NOT reproduced; use your own licensed copy to read the standard.",
+      "tested_checks": [
+        "AI-GOV-001",
+        "AI-GOV-003",
+        "AI-GOV-004",
+        "AI-GOV-008",
+        "AI-GOV-011",
+        "AI-GOV-012"
+      ],
+      "tested_check_count": 6
+    },
+    {
+      "id": "iso-23894",
+      "name": "ISO/IEC 23894",
+      "scope": "AI risk management",
+      "maturity": "work-in-progress",
+      "version": "2023 edition, identifier only",
+      "note": "Work in progress. Exposed, mapped by AI-GOV risk checks, not yet a full module.",
+      "tested_checks": [
+        "AI-GOV-004",
+        "AI-GOV-005"
+      ],
+      "tested_check_count": 2
+    },
+    {
+      "id": "nist-ai-rmf",
+      "name": "NIST AI RMF",
+      "scope": "Risk framework",
+      "maturity": "work-in-progress",
+      "version": "AI RMF 1.0 (2023)",
+      "note": "Work in progress. Exposed, mapped by AI-GOV risk checks.",
+      "tested_checks": [
+        "AI-GOV-001",
+        "AI-GOV-004",
+        "AI-GOV-005",
+        "AI-GOV-010",
+        "AI-GOV-011",
+        "AI-GOV-012"
+      ],
+      "tested_check_count": 6
+    },
+    {
+      "id": "iso-27001",
+      "name": "ISO/IEC 27001",
+      "scope": "Security controls",
+      "maturity": "work-in-progress",
+      "version": "2022 edition, identifier only",
+      "note": "Work in progress. Exposed, relevant security controls only.",
+      "tested_checks": [
+        "AI-GOV-008",
+        "AI-GOV-009",
+        "AI-GOV-010"
+      ],
+      "tested_check_count": 3
+    },
+    {
+      "id": "iso-27701",
+      "name": "ISO/IEC 27701",
+      "scope": "Privacy controls",
+      "maturity": "work-in-progress",
+      "version": "Identifier only",
+      "note": "Work in progress. Exposed, not yet fully mapped.",
+      "tested_checks": [
+        "AI-GOV-006"
+      ],
+      "tested_check_count": 1
+    },
+    {
+      "id": "iso-42005",
+      "name": "ISO/IEC 42005",
+      "scope": "AI impact assessment",
+      "maturity": "work-in-progress",
+      "version": "Identifier only",
+      "note": "Work in progress. Exposed, not yet fully mapped.",
+      "tested_checks": [],
+      "tested_check_count": 0
+    },
+    {
+      "id": "iso-38507",
+      "name": "ISO/IEC 38507",
+      "scope": "AI governance",
+      "maturity": "work-in-progress",
+      "version": "Identifier only",
+      "note": "Work in progress. Exposed, not yet fully mapped.",
+      "tested_checks": [],
+      "tested_check_count": 0
+    }
+  ]
+}
